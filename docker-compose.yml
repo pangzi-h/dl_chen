@@ -1,0 +1,7 @@
+services:
+  dev:
+    image: langdonglei/dev
+    ports:
+      - '80:80'
+    volumes:
+      - './fastadmin:/www'
