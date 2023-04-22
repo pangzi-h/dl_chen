@@ -6,9 +6,9 @@
         <div class="dashboard-container" @click="closeEdit()">
           <div class="tableContent">
             <vxe-table
+                align="center"
                 resizable
                 width="100%"
-                height="600"
                 highlight-hover-row
                 border
                 show-overflow
@@ -54,9 +54,9 @@
                         <div class="rongall" @click.stop="tisheng(row,item.name,index)">
                           <div class="xian" v-for="(items,index_ss) in row[item.name]" :key="index_ss" :class="items.ischecked?'solids':''"></div>
                         </div>
-                        <div class="rongright">
-                          <div class="shijian" v-for="(items,index_ss) in row[item.name]" :key="index_ss"> {{ items.time ? items.name + ':' + items.time : '' }}</div>
-                        </div>
+<!--                        <div class="rongright">-->
+<!--                          <div class="shijian" v-for="(items,index_ss) in row[item.name]" :key="index_ss"> {{ items.time ? items.name + ':' + items.time : '' }}</div>-->
+<!--                        </div>-->
                       </div>
                     </template>
                   </vxe-table-column>
@@ -295,9 +295,20 @@ export default {
 </script>
 
 <style>
+.container{
+  overflow: hidden;
+}
+.teamnames.vxe-input{
+  margin-left: 4px!important;
+}
+.main{
+  padding-bottom: 0!important;
+  padding-top: 10px!important;
+}
 .dashboard-container{
   display: flex;
   justify-content: space-between;
+  overflow-y: hidden;
 }
 .tableContent {
   width: 70%;
@@ -310,6 +321,9 @@ export default {
   border-left: 0;
   text-align: left;
 }
+.vxe-table--render-default .vxe-header--column:not(.col--ellipsis) {
+   padding: 4px 0!important;
+}
 .title{
   color:#ea5711;
 }
@@ -321,16 +335,15 @@ export default {
   margin-left: 4px;
 }
 .imgavtar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  /*width: 100%;*/
+  /*height: 100%;*/
+  /*border-radius: 50%;*/
 }
 
 .clickcontent {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 150px;
 }
 
 .rongall {
@@ -389,15 +402,19 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
+.first-col-top{
+  margin-left: 20%;
+}
 .teamnames.vxe-input {
   margin-left: 10px;
   width: 400px;
+  height: 20px;
 }
 
 .teamnames {
   margin-left: 10px;
   width: 400px;
+  text-align: left;
 }
 
 .first-col-gongzuo {
@@ -405,11 +422,11 @@ export default {
 }
 
 .first-col-gongzuo > .teamnames.vxe-input {
-  width: 80%;
+  width: 90%;
 }
 
 .first-col-gongzuo > .teamnames {
-  width: 80%;
+  width: 90%;
   height: 100%;
   overflow-y: scroll;
 }
@@ -424,11 +441,11 @@ export default {
 }
 
 .vxe-body--column {
-  height: 150px !important;
+  /*height: 150px !important;*/
 }
 
 .vxe-table--render-default .vxe-body--column.col--ellipsis > .vxe-cell {
-  max-height: 150px !important;
+  /*max-height: 150px !important;*/
 }
 .vxe-table .laders.vxe-body--column{
   background: #000!important;
