@@ -5,4 +5,7 @@ module.exports       = defineConfig({
         port        : 80,
         allowedHosts: 'all',
     },
+    outputDir: '../fastadmin/public/vue',
+    publicPath: 'vue',
+    indexPath: '../index.html',
 })
