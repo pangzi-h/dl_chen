@@ -335,8 +335,8 @@ export default {
   margin-left: 4px;
 }
 .imgavtar {
-  /*width: 100%;*/
-  /*height: 100%;*/
+  width: 100%;
+  height: 50px;
   /*border-radius: 50%;*/
 }
 
