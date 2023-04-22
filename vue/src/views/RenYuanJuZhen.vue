@@ -6,6 +6,7 @@
         <div class="dashboard-container" @click="closeEdit()">
           <div class="tableContent">
             <vxe-table
+                auto-resize
                 align="center"
                 resizable
                 width="100%"
@@ -301,8 +302,8 @@ export default {
   margin-left: 4px!important;
 }
 .main{
-  padding-bottom: 0!important;
-  padding-top: 10px!important;
+  padding-bottom: 20px!important;
+  padding-top: 20px!important;
 }
 .dashboard-container{
   display: flex;
@@ -311,6 +312,7 @@ export default {
 }
 .tableContent {
   width: 70%;
+  height: 95%;
 }
 .tableright{
   width: 30%;
@@ -445,6 +447,8 @@ export default {
 
 .vxe-table--render-default .vxe-body--column.col--ellipsis > .vxe-cell {
   /*max-height: 150px !important;*/
+  display: flex;
+  justify-content: center;
 }
 .vxe-table .laders.vxe-body--column{
   background: #000!important;
