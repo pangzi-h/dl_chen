@@ -32,7 +32,8 @@
                   <template v-slot="{ row }">
                     <div style="position: relative">
                       <input type="file" @change='handleFileChange($event,row)' accept=".jpg,.jpeg,.png" name="file" style="opacity:0;position: absolute; top: 0;left: 0;right: 0;bottom: 0"/>
-                      <img :src="row.avtar" alt="" class="imgavtar">
+                      <img v-if="row.avtar" :src="row.avtar" alt="" class="imgavtar">
+                      <img v-else src="@/assets/image3.png" alt="" class="imgavtar">
                     </div>
                   </template>
                 </vxe-table-column>
@@ -103,9 +104,7 @@
               <div class="flex-rows">
                 <span style="width: 26px;display: inline-block"></span>高级: <span class="flex-rows-rightspan" style="display: inline-block">能培训他人生产出合格品，并按照标准化工作执行不少于一年</span>
               </div>
-
             </div>
-
           </div>
         </div>
       </div>
@@ -134,7 +133,7 @@ export default {
       ],
       tableData  : [
         {
-          id:10001, avtar: 'https://vxetable.cn/logo.png', lader:'领导', name: 'Test1', role: 'Develop', sex: 'Man',
+          id:10001, avtar: '', lader:'领导', name: 'Test1', role: 'Develop', sex: 'Man',
           date1: [{name: '初级', ischecked: false, time: ''}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
           date2: [{name: '初级', ischecked: false, time: ''}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
           date3: [{name: '初级', ischecked: false, time: ''}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
@@ -144,7 +143,7 @@ export default {
           date7: [{name: '初级', ischecked: false, time: ''}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
         },
         {
-          id:10002, avtar: 'https://vxetable.cn/logo.png', lader:'固定成员', name: 'Test2', role: 'Test', sex: 'Women',
+          id:10002, avtar: '', lader:'固定成员', name: 'Test2', role: 'Test', sex: 'Women',
           date1: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
           date2: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
           date3: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
@@ -154,7 +153,7 @@ export default {
           date7: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
         },
         {
-          id:10003, avtar: 'https://vxetable.cn/logo.png', lader:'固定成员', name: 'Test3', role: 'PM', sex: 'Man',
+          id:10003, avtar: '', lader:'固定成员', name: 'Test3', role: 'PM', sex: 'Man',
           date1: [{name: '初级', ischecked: false, time: ''}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
           date2: [{name: '初级', ischecked: false, time: ''}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
           date3: [{name: '初级', ischecked: false, time: ''}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
@@ -164,7 +163,7 @@ export default {
           date7: [{name: '初级', ischecked: false, time: ''}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
         },
         {
-          id: 10004, avtar: 'https://vxetable.cn/logo.png', lader:'固定成员', name: 'Test4', role: 'Designer', sex: 'Women ',
+          id: 10004, avtar: '', lader:'固定成员', name: 'Test4', role: 'Designer', sex: 'Women ',
           date1: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
           date2: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
           date3: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
@@ -174,7 +173,7 @@ export default {
           date7: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
         },
         {
-          id   : 10005, avtar: 'https://vxetable.cn/logo.png', lader:'固定成员', name: 'Test5', role: 'Develop', sex: 'Women ',
+          id   : 10005, avtar: '', lader:'固定成员', name: 'Test5', role: 'Develop', sex: 'Women ',
           date1: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
           date2: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
           date3: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
@@ -184,7 +183,7 @@ export default {
           date7: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
         },
         {
-          id:10006, avtar: 'https://vxetable.cn/logo.png', lader:'固定成员', name: 'Test6', role: 'Designer', sex: 'Women ',
+          id:10006, avtar: '', lader:'固定成员', name: 'Test6', role: 'Designer', sex: 'Women ',
           date1: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
           date2: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
           date3: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
@@ -194,7 +193,7 @@ export default {
           date7: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
         },
         {
-          id:10007, avtar: 'https://vxetable.cn/logo.png', lader: '固定成员', name: 'Test7', role: 'Test', sex: 'Man ',
+          id:10007, avtar: '', lader: '固定成员', name: 'Test7', role: 'Test', sex: 'Man ',
           date1: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: true, time: '2022-12-09'}, {name: '高级', ischecked: true, time: '2022-12-09'}],
           date2: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: true, time: '2022-12-09'}, {name: '高级', ischecked: true, time: '2022-12-09'}],
           date3: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: true, time: '2022-12-09'}, {name: '高级', ischecked: true, time: '2022-12-09'}],
@@ -204,7 +203,7 @@ export default {
           date7: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: true, time: '2022-12-09'}, {name: '高级', ischecked: true, time: '2022-12-09'}]
         },
         {
-          id:10008, avtar: 'https://vxetable.cn/logo.png', lader: '临时成员', name: 'Test8', role: 'Develop', sex: 'Man ',
+          id:10008, avtar: '', lader: '临时成员', name: 'Test8', role: 'Develop', sex: 'Man ',
           date1: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: true, time: '2022-12-09'}, {name: '高级', ischecked: false, time: ''}],
           date2: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: true, time: '2022-12-09'}, {name: '高级', ischecked: false, time: ''}],
           date3: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: true, time: '2022-12-09'}, {name: '高级', ischecked: false, time: ''}],
@@ -214,7 +213,7 @@ export default {
           date7: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: true, time: '2022-12-09'}, {name: '三级', ischecked: true, time: '2022-12-09'}, {name: '高级', ischecked: false, time: ''}],
         },
         {
-          id: 10009, avtar: 'https://vxetable.cn/logo.png', lader: '临时成员', name: 'Test8', role: 'Develop', sex: 'Man ',
+          id: 10009, avtar: '', lader: '临时成员', name: 'Test8', role: 'Develop', sex: 'Man ',
           date1: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
           date2: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
           date3: [{name: '初级', ischecked: true, time: '2022-12-09'}, {name: '二级', ischecked: false, time: ''}, {name: '三级', ischecked: false, time: ''}, {name: '高级', ischecked: false, time: ''}],
