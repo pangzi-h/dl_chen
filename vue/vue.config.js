@@ -5,7 +5,7 @@ module.exports       = defineConfig({
         port        : 80,
         allowedHosts: 'all',
     },
-    outputDir: '../fastadmin/public/vue',
-    publicPath: 'vue',
-    indexPath: '../index.html',
+    outputDir            : process.env.NODE_ENV === 'production' ? '../fastadmin/public/vue' : 'dist',
+    indexPath            : process.env.NODE_ENV === 'production' ? '../index.html' : 'index.html',
+    publicPath           : process.env.NODE_ENV === 'production' ? 'vue' : '/',
 })
